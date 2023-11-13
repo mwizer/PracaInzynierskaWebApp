@@ -1,0 +1,4 @@
+fly.toml
+init_database.py
+/venv/
+/.idea/
