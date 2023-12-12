@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <h1>Generator sztucznych danych medycznych</h1>
+        <p>Strona stworzona na potrzeby pracy inżnierskiej na temat generowania sztucznych danch medycznych</p>
+
+        <form method="GET" action="/downcsv">
+
+            <p>Wybierz generator:
+                <select name="type" id="type-select" class="select">
+                    <option value="gmm">GMM</option>
+                    <option value="ctgan">CTGAN</option>
+                </select>
+            </p>
+
+            <p>Podaj liczbę danych do pobrania:
+                <input type="number" id="numtogen" name="number" min="1" max="10000" maxlength="4" value="100"
+                       class="input"/>
+            </p>
+
+            <input type="submit" value="Pobierz" class="input">
+
+        </form>
+    </div>
+{% endblock %}

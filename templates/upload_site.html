@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    <br/>
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <h1>Wgraj własny model</h1>
+        <br/>
+        <p>Wgraj własny model w formacie <b><i>pickle</i></b></p>
+        <p>Akceptowane modele to <b>GMM</b> (Mieszanina Gaussa) oraz <b>CTGAN</b></p>
+        <p>Modele są zapisywane jedynie przez 5 minut, a co za tym idzie, istnieje konieczność ponownego wgrania modelu po upływie tego czasu</p>
+        <p><b>Strona nie przechowuje ani nie zapisuje danych innych niż akceptowalne modele, nawet w przypadku jeżeli zostały one przesłane</b></p>
+        <form method=post enctype=multipart/form-data>
+            <input type=file name=file>
+            <input type=submit value=Upload>
+        </form>
+        <br/>
+        <p>W niedalekiej przyszłości zostanie tu zamieszczona informacja i skrypt do samodzielnego tworzenia plików modeli</p>
+    </div>
+
+
+{% endblock %}

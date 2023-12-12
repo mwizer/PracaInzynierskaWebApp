@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <h1>Generator syntetycznych danych medycznych</h1>
+        <br/>
+        <p>Aplikacja zostala stworzona na potrzeby pracy inżynierskiej w ramach metodologii "pocisków smugowych".</p>
+        <h3>Założenia</h3>
+        <p style="text-align: justify">Aplikacja zakłada umożliwienie generowania syntetycznych danych medycznych przy użyciu generatora stworzonego na bazie danych użytkownika. Ze względu na fakt, iż docelowym rodzajem danych są dane medyczne, które zawierają poufne informacje, strona internetowa nie przyjmuje danych w celu stworzenia generatora. Skrypt potrzebny do wygenerowania modelu wraz z instrukcją znajduje się w zakładace <a href="url"><b>Wygeneruj model</b></a>. </p>
+        <p style="text-align: justify">W przypadku braku własnych danych potrzebnych do stworzenia modelu generatora, dostępne są dwa gotowe do wykorzystania modele zwracające dane pacjetnów z chorobą niewydolności serca.</p>
+
+        <p> Serwer strony internetowej nie przyjmuje ani nie przechowuje zbiorów danych. Modele generatorów usuwane są po czasie 5 minut od przesłania na stronę internetową.</p>
+    </div>
+{% endblock %}

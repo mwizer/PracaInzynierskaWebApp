@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <h1>Skrypt tworzący model generatywny</h1>
+        <br/>
+        <p>Ze względu na fakt, iż strona internetowa nie może przechowywać danych poufnych, a jedynie modele generatorów, proszę o pobranie skryptu tworzącego lokalnie model generatora. Przed uruchomieniem skryptu, upewnij się, że dane zostały odpowiednio oczyszczone i przygotowane do tworzenia generatora. W celu stworzenia modelu generatora należy:</p>
+
+        <ol start="0">
+            <li> W przypadku jeżeli nie posiadasz zainstalowanego języka programowania Python, wykonaj najpierw następujące kroki. W przeciwnym wypadku przejdź do kroku 1. </li>
+            <ul>
+                <li> Pobierz instalator Pythona: <a href="https://www.python.org/downloads/release/python-3102/">Pobierz</a></li>
+                <li> Uruchom instalator i postępuj według dalszych poleceń instalatora (w przypadku systemu Windows zalecane jest zaznaczenie opcji "Add Python to environment variables")</li>
+                <li> W celu weryfikacji instalacji otwórz konsolę komend i wpisz <b>python --version</b>. Konsola powinna zwrócić instalowaną wersją Pythona.</li>
+            </ul>
+            <p></p>
+            <li> Pobierz skrypt do generowania modeli generatora oraz listę wymaganych bibliotek: <a  href="{{ url_for('downzip') }}">Pobierz</a></li>
+            <li> Rozpakuj plik <i>zip</i> do wybranego folderu</li>
+            <li> Otwórz plik <i>skrypt.py</i> w celu edycji następujących zmiennych:</li>
+            <ul>
+                <li> <i>file_name</i> - podaj pełną lokalizację do danych w formacie <i>csv</i> na podstawie których zostanie stworzony generator w formacie <b>"ścieżka/do/pliku.csv"</b></li>
+                <li> <i>categorical_features</i> - podaj nazwę kolumny kategorialnej, która posłuży do predykcji w celu badania jakości generatora</li>
+                <li> <i>use_model</i> - podaj typ modelu jaki ma zostać wyuczony na podstawie danych. Dostępne opcje to <b>"GMM"</b> oraz <b>"CTGAN"</b></li>
+            </ul>
+            <li> W celu uruchomienia skryptu podążaj za następującymi krokami:</li>
+            <ol type="a">
+                <li> Otwórz konsolę komend</li>
+                <li> Przejdź do wybranego folderu zawierającego wypakowane pliki za pomocą komendy: <b>cd ścieżka/do/pliku</b></li>
+                <li> Utwórz wirtualne środowisko Pythona (venv) za pomocą komendy: <b>python -m venv venv</b> </li>
+                <li> Aktywuj wirtualne środowisko Pythona za pomocą komendy: </li>
+                    <ul>
+                        <li> Windows: <b>venv\Scripts\activate</b> </li>
+                        <li> Linux: <b>source venv/bin/activate</b> </li>
+                    </ul>
+
+                <li> Zainstaluj wymagane biblioteki (może to chwilę zająć) za pomocą komendy: <b>pip install -r requirements.txt</b> </li>
+                <li> Uruchom skrypt za pomocą komendy: <b>python skrypt.py</b></li>
+
+
+            </ol>
+
+        </ol>
+
+
+    </div>
+{% endblock %}

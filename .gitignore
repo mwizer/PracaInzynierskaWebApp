@@ -1,4 +1,5 @@
 fly.toml
 init_database.py
+Procfile
 /venv/
 /.idea/

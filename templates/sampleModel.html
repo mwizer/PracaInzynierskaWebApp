@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+     {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <h1>Wygeneruj dane na podstawie własnego modelu</h1>
+        <br/>
+        <form method="GET" action="/downModelCsv/{{ modelName }}">
+            <p>Podaj liczbę danych do wygenerowania:
+                <br/>
+                <label>
+                    <input type="number" id="num" name="number" min="1" max="10000" maxlength="4" value="100"
+                           class="input"/>
+                </label>
+            </p>
+
+            <input type="submit" value="Pobierz" class="input">
+
+        </form>
+    </div>
+{% endblock %}
